@@ -57,7 +57,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
     sections.forEach(sectionNode => addFormPregunta(sectionNode));
 });
 
+// Llamar a addCuestionario cuando se presiona el botón "Crear cuestionario"
 document.addEventListener('DOMContentLoaded', (event) => {
     const button = document.querySelector('input[name="crea"]');
     button.addEventListener('click',addCuestionario);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Función que se ejecutará cuando se presione 'Enter' en un input
+  function handleEnterPress(event) {
+      if (event.key === 'Enter') {
+          event.preventDefault();
+
+          // Si el input está dentro del div con id 'nuevoCuestionario'
+          if (event.target.closest('#nuevoCuestionario')) {
+              addCuestionario(event);
+          }
+          else{
+              addPregunta(event);
+          }
+      }
+  }
+
+  // Agregamos el evento a todos los inputs de tipo texto
+  document.querySelectorAll('input[type="text"]').forEach(function(input) {
+      input.addEventListener('keydown', handleEnterPress);
+  });
+});
+

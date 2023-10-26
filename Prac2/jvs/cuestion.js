@@ -24,7 +24,7 @@ function addCuestionario(event) {
     form.querySelector("[name='imagen']").value = "";
 }
 
-
+// Función para agregar un cuestionario
 function agregarCuestionario(titulo, imgUrl) {
     // Crear el nuevo elemento section
     const nuevoCuestionario = document.createElement('section');

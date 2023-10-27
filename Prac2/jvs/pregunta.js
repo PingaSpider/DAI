@@ -56,6 +56,7 @@ function addFormPregunta(sectionNode) {
     const liButton = document.createElement('li');
     const button = document.createElement('input');
     button.type = "button";
+    button.name = "añade"
     button.value = "Añadir nueva pregunta";
     button.addEventListener('click', addPregunta);
 

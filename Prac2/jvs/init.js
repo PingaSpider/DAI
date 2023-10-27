@@ -78,10 +78,13 @@ document.addEventListener("DOMContentLoaded", function() {
           }
       }
   }
-
-  // Agregamos el evento a todos los inputs de tipo texto
-  document.querySelectorAll('input[type="text"]').forEach(function(input) {
+  // Agregamos el evento a todos los inputs de tipo texto después de que se cargue toda la página, incluyendo recursos
+  window.addEventListener('load', function() {
+    // Seleccionamos todos los inputs de tipo texto y agregamos el evento
+    document.querySelectorAll('input[type="text"]').forEach(function(input) {
       input.addEventListener('keydown', handleEnterPress);
+    });
   });
+  
 });
 

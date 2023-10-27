@@ -221,12 +221,20 @@ body {
     font-family: "Ubuntu", sans-serif; /* Usa la fuente Ubuntu para todo el documento */
   }
   
-  .pregunta {
+  /*Colocando la respuesta en la misma linea que la pregunta*/
+  .pregunta, .respuesta {
+    display: inline-block;
     margin-top: 10px;
     margin-bottom: 20px;
   }
   
-  .respuesta {
-    display: none;
+  .respuesta[data-valor="true"]::after{
+    content: "V";
+    /* Estilos adicionales como color, fuente, etc. pueden ir aquí */
+  }
+  
+  .respuesta[data-valor="false"]::after{
+    content: "F";
+    /* Estilos adicionales como color, fuente, etc. pueden ir aquí */
   }
   

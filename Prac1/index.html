@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>qÜestiona</title>
   <link id="estilo" rel="stylesheet" type="text/css" href="./css/normal.css">
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
   <nav>
     <ul>
       <li> París</li>
-      <li> Londres<li>
+      <li> Londres</li>
     </ul>
   </nav>
 
@@ -100,32 +100,6 @@
   <a href="#" onclick="changeCSS('./css/compact.css');">Vista compacta</a> |
   <span id="tiempo">[7,5 horas]</span>
 </footer>
-<script>
-  //cuando se carga una vista, si es compacta, añade los indicadores de respuesta usando window.onload
-  window.onload = function() {
-    if (document.getElementById("estilo").getAttribute("href") === './css/compact.css') {
-      addResponseIndicator();
-    }
-  };
-  // Añade los indicadores de respuesta si la respuesta es "Verdadero" coloca V al final de la pregunta
-  // si la respuesta es "Falso" coloca F al final de la pregunta.
-  function addResponseIndicator() {
-    //obtiene los elementos con clase respuesta y pregunta
-    var respuestas = document.getElementsByClassName("respuesta");
-    var preguntas = document.getElementsByClassName("pregunta");
-    //recorre los elementos con clase respuesta
-    for (var i = 0; i < respuestas.length; i++) {
-      //si el atributo data-valor es true, añade V al final de la pregunta
-      if (respuestas[i].getAttribute("data-valor") === "true") {
-        preguntas[i].textContent += " V";
-        //si el atributo data-valor es false, añade F al final de la pregunta
-      } else {
-        preguntas[i].textContent += " F";
-      }
-    }
-  }
-  
-</script>
 </body>
 
 </html>

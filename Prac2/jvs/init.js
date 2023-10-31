@@ -18,28 +18,32 @@ function addCruz(bloqueNode) {
 
 // Función para eliminar una pregunta y su cuestionario si es necesario
 function borraPregunta(bloqueNode) {
-    // Obtener el ancestro con selector .bloque
-    var bloque = bloqueNode.closest('.bloque');
+  // Obtener el ancestro con selector .bloque
+  var bloque = bloqueNode.closest('.bloque');
 
-    // Verificar si se encontró un bloque
-    if (bloque) {
-      // Eliminar el bloque del DOM
-      bloque.remove();
+  // Verificar si se encontró un bloque
+  if (bloque) {
 
-      // Verificar si no hay más preguntas en el cuestionario
-      var preguntas = document.querySelectorAll('.bloque');
-      if (preguntas.length === 0) {
-        // Si no hay preguntas, eliminar el cuestionario del DOM
-        var cuestionario = document.querySelector('.cuestionario');
-        cuestionario.remove();
+    // Verificar si después de eliminar este bloque, no quedan más preguntas en el cuestionario
+    if (bloque.parentElement.querySelectorAll('.bloque').length === 1) { 
+      // Si es el último bloque, eliminar el cuestionario del DOM también usando el ancestro con selector section
+      var cuestionario = bloque.closest('section');
+      if (cuestionario) {
+          cuestionario.remove();
+      }
 
-        // Eliminar la entrada en el índice al principio de la página
-        var indice = document.querySelector('.indice');
-        indice.remove();
+      // Eliminar la entrada en el índice al principio de la página
+      var indice = document.querySelector('nav > ul > li > a[href="#' + cuestionario.id + '"]').closest('li');
+      if (indice) {
+          indice.remove();
       }
     }
 
+    // Ahora eliminamos el bloque del DOM
+    bloque.remove();
+  }
 }
+
 
 //Agregar la cruz de borrado a todos los bloques cuando la página se carga
 document.addEventListener('DOMContentLoaded', function() {
@@ -86,3 +90,5 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 });
+
+//LLamar a borraPregunta cuando se presiona el botón de borrar

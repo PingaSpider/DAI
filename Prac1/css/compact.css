@@ -168,8 +168,8 @@ body {
   
   .pregunta::before {
     counter-increment: preguntaContador; /* Incrementa el contador en 1 */
-    content: "Pregunta "          counter(preguntaContador);
-    display: block;
+    content: counter(preguntaContador) ". ";
+    display: inline;
     margin-bottom: 10px;
   }
   

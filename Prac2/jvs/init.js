@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
           }
       }
   }
-  // Agregamos el evento a todos los inputs de tipo texto después de que se cargue toda la página, incluyendo recursos
+  // Agregamos el evento a todos los inputs de tipo texto después de que se cargue toda la página, incluyendo recursos y recargas
   window.addEventListener('load', function() {
     // Seleccionamos todos los inputs de tipo texto y url y agregamos el evento
     const inputs = document.querySelectorAll('input[type="text"], input[type="url"]');
@@ -86,12 +86,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 });
-
-//Funcion para que cuando seleccionemos el indice nos lleve al cuestionario
-function goToCuestionario(event){
-  const indice = event.target.closest('li');
-  const tema = indice.textContent;
-  const cuestionario = document.getElementById(tema.toLowerCase());
-  cuestionario.scrollIntoView();
-}
-

@@ -16,8 +16,7 @@ function addCuestionario(event) {
 
     // Llama a la función para agregar el cuestionario
     agregarCuestionario(titulo, imgUrl);
-    // Incrementar el contador
-    cuestionarioCount++;
+
 
     // Limpiar los campos del formulario
     form.querySelector("[name='tema']").value = "";
@@ -29,10 +28,10 @@ function agregarCuestionario(titulo, imgUrl) {
     // Crear el nuevo elemento section
     const nuevoCuestionario = document.createElement('section');
 
-    // Establecer el contenido del nuevo cuestionario
+    // Establecer el contenido del nuevo cuestionario el id sera el titulo en minusculas
     nuevoCuestionario.innerHTML = `
-        <section id= tolowercase(${titulo})>
-        <h2><img src="${imgUrl}" alt="${titulo}"> Cuestionario sobre ${titulo}</h2>
+        <section id= "${titulo.toLowerCase()}">
+        <h2><img src="${imgUrl}" alt="${imgUrl}"> Cuestionario sobre ${titulo}</h2>
         <!-- Puedes agregar más bloques de preguntas aquí si lo necesitas -->
     `;
 
@@ -43,18 +42,24 @@ function agregarCuestionario(titulo, imgUrl) {
     // Agregar el formulario de creación de preguntas
     addFormPregunta(nuevoCuestionario);
 
+
     // Obtiene el valor del tema
     let tema = document.querySelector('input[name="tema"]').value;
 
-    // Crear un nuevo elemento <ul> para el título del cuestionario
-    let ul = document.createElement('ul');
-    ul.textContent = tema;
-
     // Obtiene la etiqueta <nav>
-    let nav = document.querySelector('nav');
+    let index = document.querySelector('nav').querySelector('ul');
 
-    // Agrega el nuevo <ul> al final de la etiqueta <nav>
-    nav.appendChild(ul);
+    // Agrega el nuevo <li> al final de la etiqueta <nav> y <li><a href="#londres">Londres</a></li>
+    index.innerHTML += `<li><a href="#${tema.toLowerCase()}">${tema}</a></li>`;
+    
+
+    //Añade un listener al nuevo cuestionario para los inputs que se creen en el futuro y llame a la funcion addPregunta si damos enter en el input de texto
+    nuevoCuestionario.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            addPregunta(event);
+        }
+    });
+
 }
 
 

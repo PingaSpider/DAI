@@ -87,6 +87,7 @@ function addPregunta(event) {
     const enunciado = formDiv.querySelector('input[name$="_pregunta"]').value;
     const respuesta = formDiv.querySelector('input[name$="_respuesta"]:checked').value;
 
+
     // Crear un nuevo bloque de pregunta y respuesta
     const bloqueDiv = document.createElement('div');
     bloqueDiv.classList.add('bloque');

@@ -21,33 +21,14 @@
       de la Universitat d'Alacant.
     </p>
   </header>
-
-  <script>
-    // Esperamos a que todo el documento esté completamente cargado
-    document.addEventListener('DOMContentLoaded', function () {
-      // Seleccionamos el elemento input y añadimos un evento 'keydown'
-      document.querySelector('input[name="tema"]').addEventListener('keydown', function (evento) {
-        // Verificamos si la tecla presionada es "Enter"
-        if (evento.key === 'Enter') {
-          // Evitamos que se realice la acción por defecto (por ejemplo, enviar el formulario)
-          evento.preventDefault();
-          
-          // Aquí, "simulas" un clic en el botón de crear nuevo cuestionario.
-          // Esto asume que el botón de crear tiene el atributo name="crea".
-          var botonCrear = document.querySelector('input[name="crea"]');
-          botonCrear.click();
-        }
-      });
-    });
-  </script>
   <script src=" ./jvs/dom-utils.js"></script>
   <script src="./jvs/pregunta.js"></script>
   <script src="./jvs/cuestion.js"></script>
   <script src="./jvs/init.js" defer> </script>
   <nav>
     <ul>
-      <li> París</li>
-      <li> Londres</li>
+      <li><a href="#paris">París</a></li>
+      <li><a href="#londres">Londres</a></li>
     </ul>
   </nav>
   

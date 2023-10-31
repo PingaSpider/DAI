@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Función que se ejecutará cuando se presione 'Enter' en un input
   function handleEnterPress(event) {
       if (event.key === 'Enter') {
-          event.preventDefault();
+          //event.preventDefault();
 
           // Si el input está dentro del div con id 'nuevoCuestionario'
           if (event.target.closest('#nuevoCuestionario')) {
@@ -80,11 +80,18 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   // Agregamos el evento a todos los inputs de tipo texto después de que se cargue toda la página, incluyendo recursos
   window.addEventListener('load', function() {
-    // Seleccionamos todos los inputs de tipo texto y agregamos el evento
-    document.querySelectorAll('input[type="text"]').forEach(function(input) {
-      input.addEventListener('keydown', handleEnterPress);
-    });
+    // Seleccionamos todos los inputs de tipo texto y url y agregamos el evento
+    const inputs = document.querySelectorAll('input[type="text"], input[type="url"]');
+    inputs.forEach(input => input.addEventListener('keypress', handleEnterPress));
   });
   
 });
+
+//Funcion para que cuando seleccionemos el indice nos lleve al cuestionario
+function goToCuestionario(event){
+  const indice = event.target.closest('li');
+  const tema = indice.textContent;
+  const cuestionario = document.getElementById(tema.toLowerCase());
+  cuestionario.scrollIntoView();
+}
 

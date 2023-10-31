@@ -48,16 +48,6 @@ body {
     margin: 0 auto;
   }
   
-  /* Sección de cuestionarios */
-  section {
-    margin-top: 80px;
-    max-width: 1080px;
-    width: 98%;
-    margin: 0 auto;
-    vertical-align: middle;
-    line-height: 18px;
-  }
-  
   /* Preguntas */
   .pregunta {
     margin-top: 1ex;
@@ -107,20 +97,6 @@ body {
     margin: 0; /* Remover todos los márgenes predeterminados */
   }
   
-  /* Cabecera */
-  header {
-    max-width: 1080px;
-    width: 98%;
-    margin: 0 auto; /* Márgenes automáticos a la derecha e izquierda */
-    text-align: center;
-  }
-  
-  /* Encabezados */
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-  }
-  
   h2 {
     font-size: 25px;
     font-weight: bold;
@@ -142,25 +118,17 @@ body {
   nav a:hover {
     cursor: pointer;
   }
-  
-  /* Fragmento principal 
-  main {
-    max-width: 1080px;
-    width: 98%;
-    margin: 0 auto;
-  }*/
-  
+
   /* Sección de cuestionarios */
   section {
+    margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 80px;
     max-width: 1080px;
     width: 98%;
-    margin: 0 auto;
     vertical-align: middle;
     line-height: 18px;
     counter-reset: preguntaContador;
-
   }
   
   #paris{
@@ -230,6 +198,7 @@ body {
       margin-bottom: 20px;
       padding: 10px;
       box-shadow: 6px 6px 3px slategray;
+      position: relative;
   }
   
   .respuesta[data-valor="true"]::after {
@@ -288,12 +257,6 @@ body {
     border: 1px solid #aaa;
     box-shadow: 0px 0px 3px #ccc, 0 5px 8px #eee inset;
     border-radius:2px;
-  }
-
-
-  .bloque {
-    /* Estilos para el contenedor */
-    position: relative;
   }
   
   .borra {

@@ -1,0 +1,272 @@
+/* Estilos generales de la página */
+body {
+    background-color: white;
+    color: #333333;
+    margin: 0; /* Remover todos los márgenes predeterminados */
+  }
+  
+  /* Cabecera */
+  header {
+    max-width: 1080px;
+    width: 98%;
+    margin: 0 auto; /* Márgenes automáticos a la derecha e izquierda */
+    text-align: center;
+  }
+  
+  /* Encabezados */
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  
+  /* Índice */
+  nav ul {
+    list-style: none; /* Eliminar adornos de lista */
+    color: cornflowerblue;
+    text-align: center;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: cornflowerblue; /* Color de los enlaces */
+  }
+  
+  nav a:hover {
+    cursor: pointer;
+  }
+  
+  /* Fragmento principal */
+  main {
+    max-width: 1080px;
+    width: 98%;
+    margin: 0 auto;
+  }
+  
+  /* Preguntas */
+  .pregunta {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  
+  /* Texto en otro idioma */
+  .idioma {
+    font-style: italic; /* Texto en itálica */
+  }
+  
+  
+  /* Pie de página */
+  footer {
+    height: 50px;
+    margin-top: 100px;
+    background-color: steelblue;
+    color: white;
+    width: 100%;
+    text-align: center;
+    line-height: 50px; /* Centrado vertical del texto */
+    position: relative; /* Se establece para asegurar la altura */
+  }
+  
+  footer a {
+    color: lightgray;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    cursor: pointer;
+  }
+  
+  /* Estilos generales de la página */
+  body {
+    background-color: white;
+    color: #333333;
+    margin: 0; /* Remover todos los márgenes predeterminados */
+  }
+  
+  
+  /* Índice */
+  nav ul li {
+    list-style: none; /* Eliminar adornos de lista */
+    color: cornflowerblue;
+    text-align: center;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: cornflowerblue; /* Color de los enlaces */
+  }
+  
+  nav a:hover {
+    cursor: pointer;
+  }
+
+  /* Sección de cuestionarios */
+  section {
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    max-width: 1080px;
+    width: 98%;
+    vertical-align: middle;
+    line-height: 18px;
+    counter-reset: preguntaContador;
+  }
+  
+  #paris{
+    margin-top:80px;
+    margin-bottom: 80px;
+  }
+  
+  .pregunta::before {
+    counter-increment: preguntaContador; /* Incrementa el contador en 1 */
+    content: "Pregunta "          counter(preguntaContador);
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* Preguntas */
+  .pregunta {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    
+  }
+  
+  /* Texto en otro idioma */
+  .idioma {
+    font-style: italic; /* Texto en itálica */
+  }
+  
+  /* Imagen en el título del cuestionario */
+  .img {
+    /* Asumiendo que la imagen está dentro de h2 */
+    vertical-align: text-top;
+    width: 50px; /* Ancho */
+    height: 50px; /* Alto */
+    margin-right: 10px; /* Margen a la derecha */
+    border: 1px solid lightgray; /* Borde */
+  }
+  
+  /* Pie de página */
+  footer {
+    height: 50px;
+    margin-top: 100px;
+    background-color: steelblue;
+    color: white;
+    width: 100%;
+    text-align: center;
+    line-height: 50px; /* Centrado vertical del texto */
+    position: relative; /* Se establece para asegurar la altura */
+  }
+  
+  footer a {
+    color: lightgray;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    cursor: pointer;
+  }
+  
+  /* Estilo para la vista normal */
+  body {
+      font-family: 'Droid Serif', serif; /* Usa la fuente Droid Serif para todo el documento */
+  }
+  
+  .bloque {
+      background-color: whitesmoke;
+      border: 1px solid lightgray;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      box-shadow: 6px 6px 3px slategray;
+      position: relative;
+  }
+  
+  .respuesta[data-valor="true"]::after {
+    content: "Verdadero";
+    /* Estilos adicionales como color, fuente, etc. pueden ir aquí */
+  }
+  
+  .respuesta[data-valor="false"]::after {
+    content: "Falso";
+    /* Estilos adicionales como color, fuente, etc. pueden ir aquí */
+  }
+
+  /*Estilos para la practica 2*/
+  main ul,section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  main li,section li{
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /*Priemer Elemento de la lista*/
+  main li:first-child{
+    border-top: 1px solid #777;
+  }
+  /*Ultimo elemento de la lista*/
+  main li:last-child{
+    border-bottom: 1px solid #777;
+  }
+
+  /*Estilos para el formulario*/
+  .addPregunta li:first-child{
+    border-top: 1px solid #777;
+  }
+
+  .addPregunta li:last-child{
+    border-bottom: 1px solid #777;
+  }
+
+  label{
+    display: inline-block;
+    width: 25%;
+  }
+
+  /*Estilos para el formulario del verdadero y falso, de esta forma las cajas de los input radio
+  tendran el "mismo tamaño" que la caja general del label*/
+  .radio{
+    width: 10%;
+  }
+
+  input[type="text"],input[type="url"],input[type="radio"]{
+    border: 1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 5px 8px #eee inset;
+    border-radius:2px;
+  }
+  
+  .borra {
+    /* Estilos para el botón */
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    /* otros estilos como color, fondo, etc., si quieres mejorar el ícono */
+  }
+
+
+  #tiempo{
+    display:none;
+  }
+
+
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  
+

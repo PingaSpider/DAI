@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>qÜestiona</title>
+  <link id="estilo" rel="stylesheet" type="text/css" href="./css/normal.css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>qÜestiona</h1>
+    <p class="descripcion">qÜestiona es una aplicación web que permite gestionar cuestionarios
+      sobre un determinado tema en el que las posibles respuestas son verdadero o falso.
+      La aplicación se desarrolla como parte de las prácticas de la asignatura Desarrollo
+      de Aplicaciones en Internet del Grado en Ingeniería Informática
+      de la Universitat d'Alacant.
+    </p>
+  </header>
+  <script src=" ./jvs/dom-utils.js"></script>
+  <script src="./jvs/pregunta.js"></script>
+  <script src="./jvs/flickr.js"> </script>
+  <script src="./jvs/wiki.js" > </script>
+  <script src="./jvs/encabezado-cuestionario.js"></script>
+  <script src="./jvs/cuestion.js"></script>
+  <script src="./jvs/init.js" defer> </script>
+  <nav>
+    <ul>
+      <li><a href="#paris">París</a></li>
+      <li><a href="#londres">Londres</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <div class="formulario" id="nuevoCuestionario">
+      <ul>
+        <li>
+          <label>Tema del cuestionario:</label>
+          <input type="text" name="tema" autofocus>
+        </li>
+        <li>
+          <input type="button" name="crea" value="Crear nuevo cuestionario">
+        </li>
+      </ul>
+    </div>
+  </main>
+  
+
+        <!-- Sección sobre París -->
+  <section id="parís">
+    <h2 class="visually-hidden">Cuestionario sobre París</h2> <!-- Encabezado oculto para validación y accesibilidad -->
+    <encabezado-cuestionario data-tema="París"></encabezado-cuestionario>
+    <div class="bloque">
+      <div class="pregunta">
+        La ciudad de París se sitúa a ambos lados del río Sena.
+      </div>
+      <div class="respuesta" data-valor="true">
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="pregunta">
+        La Basílica del Sacré Cœur es la única iglesia de Montmartre.
+      </div>
+      <div class="respuesta" data-valor="false">
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="pregunta">
+        París se divide administrativamente en 20 distritos o arrondissements.
+      </div>
+      <div class="respuesta" data-valor="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección sobre Londres -->
+  <section id="londres">
+    <h2 class="visually-hidden">Cuestionario sobre París</h2> <!-- Encabezado oculto para validación y accesibilidad -->
+    <encabezado-cuestionario data-tema="Londres"></encabezado-cuestionario>
+
+    <div class="bloque">
+      <div class="pregunta">
+        Trafalgar Square es uno de los cuatro enclaves declarados Patrimonio de la Humanidad por la Unesco con los que cuenta Londres.
+      </div>
+      <div class="respuesta" data-valor="false">
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="pregunta">
+        El metro de Londres es el más antiguo del mundo.
+      </div>
+      <div class="respuesta" data-valor="true">
+      </div>
+    </div>
+  </section>
+  <footer>
+    <span id="nombre">Nombre y Apellidos: Victor Dominguez Rodriguez | </span>
+    <span id="practica">Práctica 2 de Desarrollo de Aplicaciones en Internet | </span>
+    <span id="universidad">Universitat d' Alacant</span>
+    <span id="tiempo">[6 horas]</span>
+  </footer>
+</body>
+
+</html>

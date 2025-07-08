@@ -1,0 +1,130 @@
+/* Estilos generales de la página */
+body {
+
+    background-color: white;
+    color: #333333;
+    font-family: 'Droid Serif', serif; /* Usa la fuente Droid Serif para todo el documento */
+    margin: 0;
+  }
+  
+  /* Cabecera */
+  header {
+    max-width: 1080px;
+    width: 98%;
+    margin: 0 auto; /* Márgenes automáticos a la derecha e izquierda */
+    text-align: center;
+  }
+  
+  /* Encabezados */
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  /* Índice */
+  nav ul {
+    list-style: none; /* Eliminar adornos de lista */
+    color: cornflowerblue;
+    text-align: center;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: cornflowerblue; /* Color de los enlaces */
+    cursor: pointer;
+  }
+  
+  main{
+
+    max-width: 1080px;
+    width: 98%;
+    margin: 0 auto;
+  }
+
+
+  /* Sección de cuestionarios */
+  section {
+    margin-top: 80px;
+    counter-reset: preguntaContador;
+  }
+  
+
+  /* Preguntas */
+  .pregunta {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  
+  .idioma{
+    font-style: italic;
+  }
+
+
+  /* Imagen en el título del cuestionario */
+  h2 img {
+    vertical-align: text-top;
+    width: 50px; 
+    height: 50px;
+    margin-right: 10px; 
+    border: 1px solid lightgray;
+  }
+  
+  /* Pie de página */
+  footer {
+    height: 50px;
+    margin-top: 100px;
+    background-color: steelblue;
+    width: 100%;
+    color: white;
+    font-size: 80%;
+    text-align: center;
+    line-height: 50px;
+    position: relative; 
+  }
+  
+  footer a {
+    color: lightgray;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+  #paris{
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+
+  .pregunta::before {
+    counter-increment: preguntaContador; /* Incrementa el contador en 1 */
+    content: "Pregunta " counter(preguntaContador);
+    display: block;
+    margin-bottom: 10px;
+  }
+    
+  
+  .bloque {
+      background-color: whitesmoke;
+      border: 1px solid lightgray;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      box-shadow: 6px 6px 3px slategray;
+  }
+
+  .respuesta[data-valor="true"]::after {
+    content: "Verdadero";
+  }
+  
+
+  .respuesta[data-valor="false"]::after {
+    content: "Falso";
+  }
+  
+  

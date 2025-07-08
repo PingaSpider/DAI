@@ -1,0 +1,124 @@
+/* Estilos generales de la página */
+body {
+
+    background-color: white;
+    color: #333333;
+    font-family: "Ubuntu", sans-serif; /* Usa la fuente Ubuntu para todo el documento */
+    margin: 0;
+  }
+  
+  /* Cabecera */
+  header {
+    max-width: 1080px;
+    width: 98%;
+    margin: 0 auto; /* Márgenes automáticos a la derecha e izquierda */
+    text-align: center;
+  }
+  
+  /* Encabezados */
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  /* Índice */
+  nav ul {
+    list-style: none; /* Eliminar adornos de lista */
+    color: cornflowerblue;
+    text-align: center;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none; /* Eliminar subrayado */
+    cursor: pointer;
+  }
+   
+  main {
+
+    max-width: 1080px;
+    width: 98%;
+    margin: 0 auto;
+
+  }
+
+
+    /* Sección de cuestionarios */
+  section {
+    margin-top: 80px;
+    counter-reset: preguntaContador;
+  }
+  
+
+  /* Preguntas */
+  .pregunta {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  
+  .idioma{
+
+    font-style: italic;
+  }
+  
+  h2 img {
+    vertical-align: text-top;
+    width: 50px; 
+    height: 50px; 
+    margin-right: 10px; 
+    border: 1px solid lightgray; 
+  }
+  
+  /* Pie de página */
+  footer {
+    height: 50px;
+    margin-top: 100px;
+    background-color: steelblue;
+    color: white;
+    font-size: 80%;
+    width: 100%;
+    text-align: center;
+    line-height: 50px; /* Centrado vertical del texto */
+    position: relative; /* Se establece para asegurar la altura */
+  }
+  
+  footer a {
+    color: lightgray;
+    text-decoration: none;
+    cursor: pointer;
+  }
+    
+  #paris{
+    margin-top:80px;
+    margin-bottom: 80px;
+  }
+  
+  .pregunta{
+    display: inline;
+    margin-bottom: 10px;
+  }    
+  /*Colocando la respuesta en la misma linea que la pregunta*/
+  .bloque {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .bloque::before{
+    counter-increment: preguntaContador;
+    content: counter(preguntaContador) ". ";
+  }
+  .pregunta, .respuesta {
+    display: inline-block;
+  }
+    .respuesta[data-valor="true"]::after{
+    content: "V";  
+  }
+  
+  .respuesta[data-valor="false"]::after{
+    content: "F";
+  }
